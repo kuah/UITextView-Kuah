@@ -15,7 +15,6 @@
 		0BB156602030326E007CBF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1565F2030326E007CBF61 /* main.m */; };
 		0BB1566D20303281007CBF61 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1566820303281007CBF61 /* UITextView+Placeholder.m */; };
 		0BB1566E20303281007CBF61 /* KTextViewDelegateTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1566920303281007CBF61 /* KTextViewDelegateTransition.m */; };
-		0BB1566F20303281007CBF61 /* NSObject+Kuah.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1566A20303281007CBF61 /* NSObject+Kuah.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +28,8 @@
 		0BB1565C2030326E007CBF61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB1565E2030326E007CBF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB1565F2030326E007CBF61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0BB1566720303281007CBF61 /* NSObject+Kuah.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Kuah.h"; sourceTree = "<group>"; };
 		0BB1566820303281007CBF61 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		0BB1566920303281007CBF61 /* KTextViewDelegateTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTextViewDelegateTransition.m; sourceTree = "<group>"; };
-		0BB1566A20303281007CBF61 /* NSObject+Kuah.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Kuah.m"; sourceTree = "<group>"; };
 		0BB1566B20303281007CBF61 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		0BB1566C20303281007CBF61 /* KTextViewDelegateTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTextViewDelegateTransition.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,10 +81,8 @@
 		0BB1566620303281007CBF61 /* source */ = {
 			isa = PBXGroup;
 			children = (
-				0BB1566720303281007CBF61 /* NSObject+Kuah.h */,
 				0BB1566820303281007CBF61 /* UITextView+Placeholder.m */,
 				0BB1566920303281007CBF61 /* KTextViewDelegateTransition.m */,
-				0BB1566A20303281007CBF61 /* NSObject+Kuah.m */,
 				0BB1566B20303281007CBF61 /* UITextView+Placeholder.h */,
 				0BB1566C20303281007CBF61 /* KTextViewDelegateTransition.h */,
 			);
@@ -170,7 +165,6 @@
 				0BB156602030326E007CBF61 /* main.m in Sources */,
 				0BB1566E20303281007CBF61 /* KTextViewDelegateTransition.m in Sources */,
 				0BB156522030326E007CBF61 /* AppDelegate.m in Sources */,
-				0BB1566F20303281007CBF61 /* NSObject+Kuah.m in Sources */,
 				0BB1566D20303281007CBF61 /* UITextView+Placeholder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
