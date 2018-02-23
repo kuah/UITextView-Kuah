@@ -98,6 +98,10 @@
         [self k_setDelegate:delegate];
     }
 }
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    [self placeholderTextView].frame = self.bounds;
+}
 -(void)k_setFrame:(CGRect)frame{
     [self k_setFrame:frame];
     [self placeholderTextView].frame = (CGRect){0,0,self.bounds.size};

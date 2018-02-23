@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'UITextView-Kuah'
-  s.version      = '0.2'
+  s.version      = '0.3'
   s.summary      = '为UITextView添加Placeholder'
   s.homepage     = 'https://github.com/kuah/UITextView-Kuah'
   s.author       = "CT4 => 284766710@qq.com"

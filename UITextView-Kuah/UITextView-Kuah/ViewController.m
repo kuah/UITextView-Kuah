@@ -10,6 +10,7 @@
 #import "UITextView+PlaceHolder.h"
 
 @interface ViewController ()<UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *tv2;
 /**
  *   <#decr#>
  */
@@ -22,15 +23,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITextView * textView = [UITextView new];
-    textView.frame = (CGRect){0,0,[UIScreen mainScreen].bounds.size.width,200};
-    textView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
-    textView.delegate = self;
-    textView.placeholder = @"11111";
-    textView.placeholderColor = [UIColor redColor];
-    [self.view addSubview:textView];
-    self.textView = textView;
+//    UITextView * textView = [UITextView new];
+//    textView.frame = (CGRect){0,0,[UIScreen mainScreen].bounds.size.width,200};
+//    textView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
+//    textView.delegate = self;
+//    textView.placeholder = @"11111";
+//    textView.placeholderColor = [UIColor redColor];
+//    [self.view addSubview:textView];
+//    self.textView = textView;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)]];
+    
+    _tv2.placeholder = @"gggg";
 }
 -(void)tap:(id)sender{
     [self.view endEditing:YES];
