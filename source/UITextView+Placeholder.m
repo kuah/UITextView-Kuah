@@ -79,6 +79,13 @@
 }
 
 #pragma mark -else
+/* !!!!!!!
+ 由于UITextView并没有实现 setDelegate: 而是使用了父类 UIScrollView 的 setDelegate: 方法；
+ 所以如果不写此方法，直接使用swizzling ,被替换的会是 UIScrollView 的 setDelegate:方法，而 UITableView，UICollectionView等都会受到影响而调用到 k_setDelegate: ，单被替换了的  k_setDelegate:  ~> setDelegate: 属于在 UITextView分类的方法，所以在UITableView，UICollectionView 等调用到 k_setDelegate: 中的k_setDelegate:方法， 最终会报错找不到该方法而崩溃
+ */
+-(void)setDelegate:(id<UITextViewDelegate>)delegate{
+    [super setDelegate:delegate];
+}
 +(void)load{
     [self k_exchangeInstanceMethod1:@selector(setDelegate:) method2:@selector(k_setDelegate:)];
     [self k_exchangeInstanceMethod1:@selector(setFrame:) method2:@selector(k_setFrame:)];
