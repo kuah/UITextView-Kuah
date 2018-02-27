@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface KTextViewDelegateTransition : NSObject<UITextViewDelegate>
+/**
+ *   <#decr#>
+ */
+@property (nonatomic,weak)UITextView *placeholderTextView;
 -(instancetype)initWithTarget:(id)target placeholderTextView:(UITextView *)placeholderTextView;
+-(instancetype)initWithTarget:(id)target;
 -(void)setRealDelegate:(id<UITextViewDelegate>)delegate;
 @end

@@ -32,11 +32,12 @@
 -(KTextViewDelegateTransition *)transitionDelegate{
     KTextViewDelegateTransition *t_delegate = objc_getAssociatedObject(self, _cmd);
     if (!t_delegate) {
-        if (![self placeholderTextView])[self addplaceholderTextView];
-        KTextViewDelegateTransition *transition = [[KTextViewDelegateTransition alloc]initWithTarget:self placeholderTextView:[self placeholderTextView]];
+        KTextViewDelegateTransition *transition = [[KTextViewDelegateTransition alloc]initWithTarget:self];
         [self setTransitionDelegate:transition];
-        
     }
+    return objc_getAssociatedObject(self, _cmd);
+}
+-(KTextViewDelegateTransition *)_transitionDelegate{
     return objc_getAssociatedObject(self, _cmd);
 }
 
@@ -96,8 +97,13 @@
 -(void)k_setDelegate:(id<UITextViewDelegate>)delegate{
    
     if (![self isKindOfClass:[UITextView class]])return ;
+    if ((!delegate)) {
+        if ([self _transitionDelegate]) [[self _transitionDelegate] setRealDelegate:delegate];
+        return;
+    }
     if(![delegate conformsToProtocol:@protocol(UITextViewDelegate)] || ![self respondsToSelector:@selector(transitionDelegate)]){
         [self k_setDelegate:delegate];
+        return;
     }
     if (delegate!=[self transitionDelegate]) {
          [[self transitionDelegate] setRealDelegate:delegate];
@@ -136,7 +142,7 @@
     textView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
     [textView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)]];
     [self setPlaceholderTextView:textView];
-
+    [self transitionDelegate].placeholderTextView = textView;
 }
 -(void)tap:(UITapGestureRecognizer *)gesture{
     self.placeholderTextView.hidden = YES;

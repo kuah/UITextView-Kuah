@@ -13,10 +13,7 @@
  *   <#decr#>
  */
 @property (nonatomic,weak)UITextView *target;
-/**
- *   <#decr#>
- */
-@property (nonatomic,weak)UITextView *placeholderTextView;
+
 /**
  *   <#decr#>
  */
@@ -27,6 +24,11 @@
 -(instancetype)initWithTarget:(id)target placeholderTextView:(UITextView *)placeholderTextView{
     self = [super init];
     _placeholderTextView = placeholderTextView;
+    _target = target;
+    return self;
+}
+-(instancetype)initWithTarget:(id)target {
+    self = [super init];
     _target = target;
     return self;
 }
@@ -54,7 +56,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     __strong NSObject<UITextViewDelegate>* strongDelegate = _realDelegate;
-    self.placeholderTextView.hidden = YES;
+    if (self.placeholderTextView)self.placeholderTextView.hidden = YES;
     if (strongDelegate && [strongDelegate respondsToSelector:@selector(textViewDidBeginEditing:)]) {
         [strongDelegate textViewDidBeginEditing:textView];
     }
@@ -62,7 +64,7 @@
 - (void)textViewDidEndEditing:(UITextView *)textView{
     __strong NSObject<UITextViewDelegate>* strongDelegate = _realDelegate;
     if (self.target.text.length == 0) {
-        self.placeholderTextView.hidden = NO;
+        if (self.placeholderTextView)self.placeholderTextView.hidden = NO;
     }
     if (strongDelegate && [strongDelegate respondsToSelector:@selector(textViewDidEndEditing:)]) {
         [strongDelegate textViewDidEndEditing:textView];
