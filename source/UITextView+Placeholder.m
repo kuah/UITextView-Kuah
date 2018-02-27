@@ -52,7 +52,6 @@
     return (t && t.text.length>0)?[self placeholderTextView].text:nil;
 }
 -(void)setPlaceholder:(NSString *)placeholder{
-    [self transitionDelegate];
     UITextView * t = [self placeholderTextView];
     if (placeholder.length>0) {
         if (!t) {
@@ -71,7 +70,6 @@
     return nil;
 }
 -(void)setPlaceholderColor:(UIColor *)placeholderColor{
-    [self transitionDelegate];
     UITextView * t = [self placeholderTextView];
     if (!t) {
         [self addplaceholderTextView];
